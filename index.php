@@ -1,6 +1,9 @@
 <?php
 
-$link = $_GET['l'];
+$link = "";
+if ( isset($_GET['l'])){
+	$link = $_GET['l'];
+}
 
 if (strlen($link) != 0){
 		include_once("dbManager.php");

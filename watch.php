@@ -1,7 +1,10 @@
 <?php
 include_once("dbManager.php");
 
-$wid = $_GET['id'];
+$wid = "";
+if( isset($_GET['id'])){
+	$wid = $_GET['id'];
+}
 
 $dbm = new dbManager();
 
@@ -34,6 +37,7 @@ $allVisits = $dbm->get_visits($entry['link']);
 	<table>
 		<?php
 		echo "<tr>\n";
+if (isset($allVisits[0])){
 		foreach($allVisits[0] as $key => $value){
 			echo"<td>\n";
 			echo "$key";
@@ -43,7 +47,7 @@ $allVisits = $dbm->get_visits($entry['link']);
 		foreach($allVisits as $col){
 			echo "<tr>\n";
 			foreach($col as $key => $value){
-				
+
 				echo"<td>\n";
 				if ( $key == "ip"){
 					echo "<a target='_blank' href='https://geoiplookup.net/ip/$value'>$value</a>";
@@ -55,6 +59,7 @@ $allVisits = $dbm->get_visits($entry['link']);
 			echo "</tr>\n";
 		}
 		?>
+}
 	</table>
 </div>
 </body>

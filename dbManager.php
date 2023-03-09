@@ -27,8 +27,6 @@ class dbManager {
 
 		$values = "'$watcher','$trap','$url','$created'";
 
-		echo $values;
-
 		$sql_command = "INSERT INTO $table_entries VALUES($values)";
 
 		$this->db->exec($sql_command);

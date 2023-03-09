@@ -35,7 +35,7 @@ Para instalar o sqlite no replit siga estes passos:
 
 1. Crie um projeto `PHP Web Server`.
 2. Abra a aba `shell`
-3. Digite `sqlite3.bin --version` e aperte <kbd>Enter</kbd>
+3. Digite `sqlite3 --version` e aperte <kbd>Enter</kbd>
 
 output:
 

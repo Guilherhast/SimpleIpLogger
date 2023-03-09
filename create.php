@@ -1,6 +1,10 @@
 <?php
 
-$link = $_POST['link'];
+$link = "";
+if ( isset($_POST['link']) ){
+  $link = $_POST['link'];
+}
+
 
 if(strlen($link) > 256){
 	header("Location: /?error=Url+too+long");
